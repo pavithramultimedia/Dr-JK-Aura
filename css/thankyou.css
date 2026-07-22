@@ -1,0 +1,129 @@
+/*======================================================
+THANK YOU SCENE
+======================================================*/
+
+.thankScene{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:url("../assets/images/hero-bg.jpg")
+center/cover no-repeat;
+
+overflow:hidden;
+
+}
+
+.thankOverlay{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.82);
+
+backdrop-filter:blur(12px);
+
+}
+
+.thankCard{
+
+    width:980px;
+    max-width:94%;
+
+    padding:80px 90px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    text-align:center;
+
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
+
+}
+
+.thankCard h1{
+
+    font-size:60px;
+
+    color:#FFD700;
+
+    letter-spacing:3px;
+
+    margin-bottom:40px;
+
+    text-shadow:0 0 25px rgba(255,215,0,.35);
+
+}
+
+#typeMessage{
+
+    color:#F5F5F5;
+
+    font-size:24px;
+
+    line-height:1.9;
+
+    letter-spacing:.4px;
+
+    text-align:center;
+
+    white-space:pre-line;
+
+    min-height:360px;
+
+    max-width:850px;
+
+    margin:auto;
+
+}
+
+#celebrateBtn{
+
+margin-top:40px;
+
+width:340px;
+
+height:60px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#FFD700,#FFC107);
+
+font-size:20px;
+
+font-weight:700;
+
+cursor:pointer;
+
+opacity:0;
+
+transform:translateY(20px);
+
+transition:.35s;
+
+box-shadow:0 20px 40px rgba(255,215,0,.35);
+
+}
+
+#celebrateBtn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 25px 60px rgba(255,215,0,.50);
+
+}

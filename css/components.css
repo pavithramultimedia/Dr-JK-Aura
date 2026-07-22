@@ -1,0 +1,25 @@
+/* ==========================================
+   GLASS COMPONENT
+========================================== */
+
+.glass{
+
+    background:var(--glass);
+
+    border:1px solid var(--glass-border);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow-large);
+
+}
+
+/* Golden Glow */
+
+.glow{
+
+    box-shadow:var(--shadow-gold);
+
+}

@@ -1,0 +1,482 @@
+/*=========================================================
+                PROJECT AURORA
+                GRAND FINALE
+=========================================================*/
+
+.finaleScene{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,
+    #473200 0%,
+    #161616 35%,
+    #000000 100%);
+
+}
+
+/*==================================
+GOLDEN GLOW
+==================================*/
+
+.finaleGlow{
+
+    position:absolute;
+
+    width:1200px;
+    height:1200px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,215,0,.30) 0%,
+    rgba(255,215,0,.08) 45%,
+    transparent 75%);
+
+    filter:blur(60px);
+
+    animation:glowPulse 5s ease-in-out infinite;
+
+}
+
+/*==================================
+GLASS CARD
+==================================*/
+
+.finaleCard{
+
+    position:relative;
+
+    z-index:5;
+
+    width:900px;
+    max-width:92%;
+
+    padding:55px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    box-shadow:
+    0 35px 80px rgba(0,0,0,.55);
+
+}
+
+/*==================================
+CEO PORTRAIT
+==================================*/
+
+.finalePhoto{
+
+    width:260px;
+
+    height:340px;
+
+    object-fit:cover;
+
+    object-position:center top;
+
+    display:block;
+
+    margin:0 auto 30px;
+
+    border-radius:22px;
+
+    border:3px solid rgba(255,215,0,.9);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.45),
+        0 0 35px rgba(255,215,0,.30);
+
+    transition:.5s;
+
+}
+
+.finalePhoto:hover{
+
+    transform:scale(1.02);
+
+    box-shadow:
+        0 35px 80px rgba(0,0,0,.55),
+        0 0 45px rgba(255,215,0,.50);
+
+}
+
+/*==================================
+TITLE
+==================================*/
+
+.happyTitle{
+
+    color:#FFD700;
+
+    font-size:54px;
+
+    margin-bottom:15px;
+
+    text-shadow:
+
+    0 0 20px rgba(255,215,0,.5);
+
+}
+
+/*==================================
+NAME
+==================================*/
+
+.ceoName{
+
+    color:white;
+
+    font-size:38px;
+
+    letter-spacing:2px;
+
+    margin-bottom:30px;
+
+}
+
+/*==================================
+MESSAGE
+==================================*/
+
+.finalMessage{
+
+    color:white;
+
+    font-size:23px;
+
+    line-height:1.9;
+
+    width:80%;
+
+    margin:auto;
+
+}
+
+/*==================================
+SIGNATURE
+==================================*/
+
+.signature{
+
+    margin-top:45px;
+
+    color:#FFD700;
+
+    font-size:30px;
+
+    line-height:1.8;
+
+}
+
+.signature span{
+
+    display:block;
+
+    font-size:24px;
+
+    color:white;
+
+}
+
+/*==================================
+CREATOR
+==================================*/
+
+.creator{
+
+    margin-top:45px;
+
+    color:#cccccc;
+
+    font-size:18px;
+
+    letter-spacing:1px;
+
+}
+
+.creator strong{
+
+    color:#FFD700;
+
+    font-size:22px;
+
+}
+
+/*==================================
+ANIMATION
+==================================*/
+
+@keyframes glowPulse{
+
+    0%{
+
+        transform:scale(.95);
+        opacity:.7;
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(.95);
+        opacity:.7;
+
+    }
+
+}
+
+/*==================================
+FINAL PAGE RESPONSIVE
+==================================*/
+
+@media(max-width:768px){
+
+    .finalThankPage{
+
+        padding:20px;
+
+        background-position:center;
+
+    }
+
+    .finalThankCard{
+
+        width:94%;
+
+        padding:40px 25px;
+
+        border-radius:24px;
+
+    }
+
+    .finalThankTitle{
+
+        font-size:42px;
+
+        letter-spacing:2px;
+
+    }
+
+    .finalBirthdayText{
+
+        font-size:23px;
+
+    }
+
+    .finalCeoName{
+
+        font-size:25px;
+
+    }
+
+    .finalCreatorText{
+
+        margin-top:35px;
+
+        font-size:16px;
+
+    }
+
+    .finalCreatorText strong{
+
+        font-size:18px;
+
+    }
+
+}
+/*=========================================================
+FINAL THANK-YOU PAGE
+=========================================================*/
+
+.finalThankPage{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100vw;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    padding:40px;
+
+    text-align:center;
+
+background:
+    radial-gradient(
+        circle,
+        rgba(70,50,0,.35),
+        rgba(0,0,0,.95)
+    ),
+    url("../assets/images/gift/final-gift.png")
+    center center / contain
+    no-repeat,
+    #000;
+
+}
+
+/*==================================
+DARK OVERLAY
+==================================*/
+
+.finalThankOverlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.30),
+            rgba(0,0,0,.68)
+        );
+
+}
+
+/*==================================
+FINAL GLASS CARD
+==================================*/
+
+.finalThankCard{
+
+    position:relative;
+
+    z-index:5;
+
+    width:760px;
+
+    max-width:92%;
+
+    padding:55px 45px;
+
+    border-radius:32px;
+
+    background:
+        rgba(0,0,0,.30);
+
+    border:
+        1px solid rgba(255,255,255,.22);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55),
+        0 0 40px rgba(255,215,0,.12);
+
+}
+
+/*==================================
+THANK-YOU TITLE
+==================================*/
+
+.finalThankTitle{
+
+    margin:0 0 20px;
+
+    color:#FFD700;
+
+    font-family:"Cinzel",serif;
+
+    font-size:64px;
+
+    font-weight:800;
+
+    letter-spacing:4px;
+
+    text-shadow:
+        0 0 20px rgba(255,215,0,.55);
+
+}
+
+/*==================================
+BIRTHDAY TEXT
+==================================*/
+
+.finalBirthdayText{
+
+    margin:0;
+
+    color:#fff;
+
+    font-size:30px;
+
+    font-weight:500;
+
+}
+
+/*==================================
+CEO NAME
+==================================*/
+
+.finalCeoName{
+
+    margin-top:16px;
+
+    color:#FFD700;
+
+    font-size:34px;
+
+    letter-spacing:1.5px;
+
+}
+
+/*==================================
+CREATOR TEXT
+==================================*/
+
+.finalCreatorText{
+
+    margin-top:45px;
+
+    color:#e0e0e0;
+
+    font-size:19px;
+
+    line-height:1.7;
+
+}
+
+.finalCreatorText strong{
+
+    color:#FFD700;
+
+    font-size:21px;
+
+}

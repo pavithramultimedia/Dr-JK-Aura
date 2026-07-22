@@ -1,0 +1,4 @@
+;/*FB_PKG_DELIM*/
+
+__d("PolarisAudioCollectionRoot.entrypoint",["JSResourceForInteraction"],(function(t,n,r,o,a,i,l){"use strict";var e={getPreloadProps:function(t){return{queries:{}}},root:r("JSResourceForInteraction")("PolarisAudioCollectionRoot.react").__setRef("PolarisAudioCollectionRoot.entrypoint")};l.default=e}),98);
+__d("PolarisSavedCollectionsRoot.entrypoint",["JSResourceForInteraction"],(function(t,n,r,o,a,i,l){"use strict";var e={getPreloadProps:function(t){return{queries:{}}},root:r("JSResourceForInteraction")("PolarisSavedCollectionsRoot.react").__setRef("PolarisSavedCollectionsRoot.entrypoint")};l.default=e}),98);

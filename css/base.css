@@ -1,0 +1,72 @@
+/* ==========================================
+   PROJECT AURORA
+   BASE STYLES
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:linear-gradient(
+        180deg,
+        var(--navy),
+        #000
+    );
+
+    color:var(--white);
+
+    overflow:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    cursor:pointer;
+    font-family:inherit;
+}
+
+h1{
+
+    font-family:'Cinzel',serif;
+
+    font-size:4rem;
+
+    color:var(--gold);
+
+    letter-spacing:6px;
+
+}
+
+h2{
+
+    font-size:2rem;
+
+    font-weight:500;
+
+}
+
+p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}

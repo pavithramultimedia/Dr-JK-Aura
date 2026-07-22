@@ -1,0 +1,409 @@
+/*=========================================================
+        PROJECT AURORA 2.0
+        GALLERY SCENE
+        LEADERSHIP LEGACY
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.galleryScene{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100vw;
+
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:url("../assets/images/hero-bg.jpg") center center/cover no-repeat;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+.galleryOverlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.70);
+
+    backdrop-filter:blur(8px);
+
+}
+
+.galleryCard{
+
+    position:relative;
+
+    z-index:5;
+
+    width:850px;
+
+    max-width:92%;
+
+    padding:45px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(28px);
+
+    text-align:center;
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.45);
+
+}
+
+.progress{
+
+    color:#FFD700;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+    letter-spacing:2px;
+
+}
+
+#qualityTitle{
+
+    color:#fff;
+
+    font-size:52px;
+
+    font-weight:800;
+
+    margin-bottom:30px;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+}
+
+.photoFrame{
+
+    width:340px;
+
+    height:430px;
+
+    margin:auto;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:5px solid rgba(255,215,0,.65);
+
+    box-shadow:
+    0 20px 50px rgba(255,215,0,.25);
+
+}
+
+#qualityImage{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+#qualityImage:hover{
+
+    transform:scale(1.04);
+
+}
+
+#qualityQuote{
+
+    margin:35px auto;
+
+    max-width:650px;
+
+    color:#f5f5f5;
+
+    font-size:22px;
+
+    line-height:1.9;
+
+    font-style:italic;
+
+    min-height:90px;
+
+}
+
+#nextQuality{
+
+    padding:18px 50px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#FFD700,#FFC107);
+
+    color:#111;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+    0 15px 35px rgba(255,215,0,.35);
+
+}
+
+#nextQuality:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 25px 45px rgba(255,215,0,.45);
+
+}
+
+/*==========================================
+RESPONSIVE
+==========================================*/
+
+@media(max-width:992px){
+
+.galleryCard{
+
+width:95%;
+
+padding:30px;
+
+}
+
+.photoFrame{
+
+width:260px;
+
+height:330px;
+
+}
+
+#qualityTitle{
+
+font-size:36px;
+
+}
+
+#qualityQuote{
+
+font-size:18px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.galleryCard{
+
+padding:25px;
+
+}
+
+.photoFrame{
+
+width:220px;
+
+height:280px;
+
+}
+
+#qualityTitle{
+
+font-size:30px;
+
+}
+
+#qualityQuote{
+
+font-size:16px;
+
+line-height:1.7;
+
+}
+
+#nextQuality{
+
+width:100%;
+
+}
+
+}
+#memoryButton{
+
+    width:340px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(135deg,#FFD700,#FFC107);
+
+    color:#111;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(255,215,0,.35);
+
+}
+
+#memoryButton:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 25px 50px rgba(255,215,0,.45);
+
+}
+/*==========================================
+COMPLETION CARD
+==========================================*/
+
+.completionCard{
+
+text-align:center;
+
+padding:70px;
+
+}
+
+.completionIcon{
+
+font-size:90px;
+
+margin-bottom:25px;
+
+animation:float 3s ease-in-out infinite;
+
+}
+
+.completionCard h1{
+
+font-size:46px;
+
+color:#FFD700;
+
+letter-spacing:3px;
+
+margin-bottom:15px;
+
+}
+
+.completionCard h2{
+
+color:white;
+
+font-size:26px;
+
+font-weight:400;
+
+margin-bottom:40px;
+
+}
+
+.progressCircle{
+
+width:170px;
+
+height:170px;
+
+margin:auto;
+
+border:6px solid #FFD700;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:34px;
+
+font-weight:bold;
+
+color:#FFD700;
+
+margin-bottom:40px;
+
+box-shadow:0 0 40px rgba(255,215,0,.30);
+
+}
+
+.completionText{
+
+font-size:22px;
+
+color:white;
+
+line-height:2;
+
+margin-bottom:50px;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}

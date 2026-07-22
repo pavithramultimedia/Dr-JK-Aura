@@ -1,0 +1,77 @@
+.click-message{
+
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    transform:translateX(-50%);
+
+    color:#ffffff;
+    font-size:20px;
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    animation:blink 1.2s infinite;
+
+    z-index:1000;
+
+}
+
+@keyframes blink{
+
+    0%,100%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.3;
+
+    }
+
+}
+.introClick{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#ffffff;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    animation:introBlink 1.2s infinite;
+
+    z-index:100;
+
+    cursor:pointer;
+
+}
+
+@keyframes introBlink{
+
+    0%,100%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.35;
+
+    }
+
+}

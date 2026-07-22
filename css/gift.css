@@ -1,0 +1,421 @@
+/*=========================================================
+                PROJECT AURORA
+                GIFT SCENE
+=========================================================*/
+
+.giftScene{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at top,#3b2b00 0%,#0f0f0f 40%,#000 100%);
+}
+
+/*==================================
+BACKGROUND GOLD GLOW
+==================================*/
+
+.giftGlow{
+
+    position:absolute;
+
+    width:900px;
+
+    height:900px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,
+        rgba(255,215,0,.30) 0%,
+        rgba(255,215,0,.08) 45%,
+        transparent 75%);
+
+    filter:blur(40px);
+
+    animation:glowPulse 4s ease-in-out infinite;
+
+}
+
+/*==================================
+GLASS CARD
+==================================*/
+
+.giftCard{
+    position:relative;
+    z-index:10;
+
+    width:850px;
+    max-width:92%;
+
+    min-height:720px;      /* Increase height */
+    max-height:95vh;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    padding:60px 55px;
+
+    border-radius:35px;
+
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(22px);
+
+    overflow:visible;      /* Don't clip the gift */
+}
+/*==================================
+TITLE
+==================================*/
+
+.giftTitle{
+
+    color:#FFD700;
+
+    font-size:52px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+    text-shadow:
+
+        0 0 20px rgba(255,215,0,.4);
+
+}
+
+/*==================================
+SUBTITLE
+==================================*/
+
+.giftSubtitle{
+
+    color:white;
+
+    font-size:24px;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+
+}
+
+/*==================================
+GIFT BOX
+==================================*/
+
+.giftContainer{
+    position:relative;
+
+    width:100%;
+    height:500px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:visible;
+}
+
+#giftBox{
+
+    width:220px;
+
+    height:auto;
+
+    display:block;
+
+}
+
+/*==================================
+REAL GIFT
+==================================*/
+
+#realGift{
+
+    position:absolute;
+
+    width:280px;
+
+    left:50%;
+
+    bottom:40px;
+
+    transform:translateX(-50%);
+
+    opacity:0;
+
+    z-index:5;
+
+    filter:drop-shadow(0 0 30px gold);
+
+}
+
+/*==================================
+SIDE GIFTS
+==================================*/
+
+#leftGift,
+#rightGift{
+
+    position:absolute;
+
+    width:230px;
+
+    opacity:0;
+
+    filter:drop-shadow(0 0 25px gold);
+
+    z-index:4;
+
+}
+
+/* Left */
+
+#leftGift{
+
+    left:-260px;
+
+    bottom:170px;
+
+}
+
+/* Right */
+
+#rightGift{
+
+    right:-260px;
+
+    bottom:170px;
+
+}
+/*==================================
+QUOTE
+==================================*/
+
+.giftQuote{
+
+    color:#FFD700;
+
+    font-size:28px;
+
+    margin:20px 0;
+
+    letter-spacing:2px;
+
+    animation:quoteGlow 2s infinite;
+
+}
+
+/*==================================
+BUTTON
+==================================*/
+
+#openGiftBtn{
+    display:flex !important;
+    visibility:visible !important;
+    opacity:1 !important;
+    justify-content:center;
+    align-items:center;
+
+    width:360px;
+    height:70px;
+
+    margin:30px auto;
+
+    background:linear-gradient(135deg,#FFD700,#FFC107);
+    color:#111;
+
+    border:none;
+    border-radius:50px;
+
+    font-size:22px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    position:relative;
+    z-index:9999;
+
+    transition:.35s;
+}
+
+#openGiftBtn:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:0 20px 55px rgba(255,193,7,.6);
+}
+
+/*==================================
+ANIMATIONS
+==================================*/
+
+@keyframes glowPulse{
+
+    0%{
+
+        transform:scale(.95);
+
+        opacity:.65;
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(.95);
+
+        opacity:.65;
+
+    }
+
+}
+
+@keyframes quoteGlow{
+
+    0%{
+
+        opacity:.5;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:.5;
+
+    }
+
+}
+
+/*==================================
+RESPONSIVE
+==================================*/
+
+@media(max-width:768px){
+
+    .giftCard{
+
+        width:95%;
+
+        padding:35px;
+
+        min-height:auto;
+
+    }
+
+    .giftTitle{
+
+        font-size:36px;
+
+    }
+
+    .giftSubtitle{
+
+        font-size:18px;
+
+    }
+
+    #giftBox{
+
+        width:260px;
+
+    }
+
+    .giftQuote{
+
+        font-size:22px;
+
+    }
+
+    #openGiftBtn{
+
+        width:280px;
+
+        height:60px;
+
+        font-size:18px;
+
+    }
+
+}
+/*==================================
+MESSAGE
+==================================*/
+.giftMessage{
+
+    position:relative;
+
+    z-index:100;
+
+    margin-top:40px;
+
+    text-align:center;
+
+    color:white;
+
+    animation:fadeUp .8s ease;
+
+}
+
+.giftMessage h2{
+
+    color:#FFD700;
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+}
+
+.giftMessage p{
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    margin-bottom:30px;
+
+}
+
+#continueFinal{
+
+    width:260px;
+
+    height:65px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:linear-gradient(135deg,#FFD700,#FFC107);
+
+    color:#111;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+}

@@ -1,0 +1,57 @@
+/* =======================================
+   INTRO SCENE
+======================================= */
+
+.intro{
+
+    width:100vw;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#020617;
+
+}
+
+.intro-content{
+
+    text-align:center;
+
+}
+
+.gold{
+
+    color:#FFD700;
+
+    font-size:70px;
+
+    letter-spacing:8px;
+
+    font-family:'Cinzel',serif;
+
+}
+
+.intro h2{
+
+    margin-top:20px;
+
+    font-size:28px;
+
+    color:white;
+
+}
+
+.intro p{
+
+    margin-top:40px;
+
+    font-size:18px;
+
+    color:#888;
+
+}

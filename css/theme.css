@@ -1,0 +1,40 @@
+/* ==========================================
+   PROJECT AURORA DESIGN SYSTEM
+========================================== */
+
+:root{
+
+    /* Primary Colors */
+
+    --gold:#FFD700;
+    --gold-light:#FFF4B3;
+    --gold-dark:#C8A100;
+
+    --navy:#020617;
+    --navy-light:#0F172A;
+
+    --white:#FFFFFF;
+    --gray:#CBD5E1;
+
+    /* Glass */
+
+    --glass:rgba(255,255,255,.08);
+    --glass-border:rgba(255,255,255,.15);
+
+    /* Shadows */
+
+    --shadow-gold:
+        0 0 20px rgba(255,215,0,.5);
+
+    --shadow-large:
+        0 20px 50px rgba(0,0,0,.45);
+
+    /* Radius */
+
+    --radius:24px;
+
+    /* Transition */
+
+    --transition:.4s ease;
+
+}

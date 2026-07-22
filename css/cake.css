@@ -1,0 +1,549 @@
+/*==================================================
+CAKE SCENE
+==================================================*/
+
+.cakeScene{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,#343434,#080808 75%);
+
+}
+
+/*==================================*/
+
+.stageLight{
+
+    position:absolute;
+
+    top:-250px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:900px;
+
+    height:900px;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,215,0,.35),
+    transparent 70%);
+
+    filter:blur(30px);
+
+}
+
+/*==================================*/
+
+/*==================================
+PREMIUM CAKE CARD
+==================================*/
+
+.cakeCard{
+
+    position:relative;
+
+    z-index:10;
+
+    width:950px;
+
+    max-width:95%;
+
+    min-height:900px;
+
+    padding:60px 60px 70px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.55);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+/*==================================*/
+
+.cakeTitle{
+
+    color:#FFD700;
+
+    font-size:54px;
+
+    margin-bottom:15px;
+
+    letter-spacing:2px;
+
+}
+
+/*==================================*/
+
+.cakeSubtitle{
+
+    color:white;
+
+    font-size:24px;
+
+    margin-bottom:40px;
+
+}
+
+/*==================================*/
+
+/*==================================
+CAKE
+==================================*/
+
+#birthdayCake{
+
+    width:560px;
+
+    max-width:100%;
+
+    display:block;
+
+    margin-top:20px;
+
+    margin-bottom:45px;
+
+    animation:floatCake 4s ease-in-out infinite;
+
+}  
+
+/*==================================*/
+
+/*==================================
+CUT CAKE BUTTON
+==================================*/
+
+#cutCakeBtn{
+
+    width:360px;
+
+    height:70px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #FFD700,
+
+            #FFC107
+
+        );
+
+    color:#111;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    box-shadow:
+
+        0 18px 40px rgba(255,193,7,.40);
+
+}
+
+#cutCakeBtn:hover{
+
+    transform:
+
+        translateY(-5px)
+
+        scale(1.03);
+
+    box-shadow:
+
+        0 25px 60px rgba(255,193,7,.60);
+
+}         
+
+/*==================================*/
+
+@keyframes floatCake{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*====================================
+CAKE CONTAINER
+====================================*/
+
+.cakeContainer{
+
+    position:relative;
+
+    display:inline-block;
+
+}
+
+/*====================================
+CANDLES
+====================================*/
+
+/*====================================
+ROYAL CANDLES
+====================================*/
+
+.candles{
+
+    position:absolute;
+
+    top:80px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:240px;
+
+    height:60px;
+
+    pointer-events:none;
+
+    z-index:100;    
+
+}
+
+/* Left Candle */
+
+.leftCandle{
+
+    position:absolute;
+
+    left:0;
+
+}
+
+/* Right Candle */
+
+.rightCandle{
+
+    position:absolute;
+
+    right:0;
+
+}
+
+.candle{
+
+    width:12px;
+
+    height:46px;
+
+    border-radius:6px;
+
+    background:linear-gradient(
+
+        to bottom,
+
+        #FFE082,
+
+        #FFD54F,
+
+        #D4AF37
+
+    );
+
+    box-shadow:
+
+        0 0 12px rgba(255,255,255,.7);
+
+    position:absolute;
+
+}
+
+/*====================================
+FLAME
+====================================*/
+
+.flame{
+
+    position:absolute;
+
+    left:50%;
+
+    top:-18px;
+
+    transform:translateX(-50%);
+
+    width:16px;
+
+    height:24px;
+
+    background:radial-gradient(
+
+        circle,
+
+        #fff9b0 0%,
+
+        #ffd54f 45%,
+
+        orange 70%,
+
+        transparent 100%
+
+    );
+
+    border-radius:50% 50% 45% 45%;
+
+    filter:drop-shadow(0 0 15px gold);
+
+    animation:flicker .18s infinite alternate;
+
+}
+
+/*====================================
+MAKE A WISH
+====================================*/
+
+/*==================================
+MAKE A WISH
+==================================*/
+
+.wishText{
+
+    color:#FFD700;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:50px;
+
+    text-shadow:
+
+        0 0 20px rgba(255,215,0,.45);
+
+    animation:pulseWish 2s infinite;
+
+}
+
+/*====================================
+FLICKER
+====================================*/
+
+@keyframes flicker{
+
+    0%{
+
+        transform:
+        translateX(-50%)
+        scale(.95)
+        rotate(-2deg);
+
+        opacity:.85;
+
+    }
+
+    100%{
+
+        transform:
+        translateX(-50%)
+        scale(1.08)
+        rotate(2deg);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes pulseWish{
+
+    0%{
+
+        opacity:.5;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:.5;
+
+    }
+
+}
+/*==================================
+KNIFE
+==================================*/
+
+#cakeKnife{
+
+    position:absolute;
+
+    width:220px;
+
+    right:-320px;
+
+    top:210px;
+
+    z-index:300;
+
+    opacity:0;
+
+    transform:rotate(-15deg);
+
+    pointer-events:none;
+
+}
+/*==================================
+BALLOONS
+==================================*/
+
+.balloon{
+
+    position:fixed;
+
+    bottom:-120px;
+
+    border-radius:50% 50% 45% 45%;
+
+    z-index:9999;
+
+    animation:balloonRise linear forwards;
+
+}
+
+.balloon::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:2px;
+
+    height:55px;
+
+    background:white;
+
+    left:50%;
+
+    top:100%;
+
+    transform:translateX(-50%);
+
+}
+
+@keyframes balloonRise{
+
+    0%{
+
+        transform:
+            translateY(0)
+            translateX(0);
+
+        opacity:1;
+
+    }
+
+    25%{
+
+        transform:
+            translateY(-250px)
+            translateX(-15px);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-500px)
+            translateX(15px);
+
+    }
+
+    75%{
+
+        transform:
+            translateY(-750px)
+            translateX(-10px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(-120vh)
+            translateX(10px);
+
+        opacity:0;
+
+    }
+
+}
+/*==================================
+FIREWORKS
+==================================*/
+
+.firework{
+    position:fixed;
+    border-radius:50%;
+    pointer-events:none;
+    z-index:999999;
+    will-change:transform,opacity;
+}

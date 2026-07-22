@@ -1,0 +1,832 @@
+/*=========================================================
+        PROJECT AURORA 2.0
+        MEMORIES SCENE — FINAL CSS
+=========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/*==========================================
+MAIN SCENE
+==========================================*/
+
+.memoriesScene{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100vw;
+
+    height:100vh;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:
+        url("../assets/images/hero-bg.jpg")
+        center center / cover
+        no-repeat;
+
+    font-family:"Poppins",sans-serif;
+
+}
+
+/*==========================================
+BACKGROUND OVERLAY
+==========================================*/
+
+.memoriesOverlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:1;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.68),
+            rgba(0,0,0,.82)
+        );
+
+    backdrop-filter:blur(8px);
+
+    -webkit-backdrop-filter:blur(8px);
+
+}
+
+/*==========================================
+MAIN CONTAINER
+==========================================*/
+
+.memoriesContainer{
+
+    position:relative;
+
+    z-index:5;
+
+    width:95%;
+
+    max-width:1600px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+/*==========================================
+SECTION TITLE
+==========================================*/
+
+.sectionTitle{
+
+    width:100%;
+
+    margin-bottom:50px;
+
+    text-align:center;
+
+}
+
+.sectionTitle h1{
+
+    color:#FFD700;
+
+    font-family:"Cinzel",serif;
+
+    font-size:52px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    text-shadow:
+        0 0 15px rgba(255,215,0,.30);
+
+}
+
+.sectionTitle p{
+
+    margin-top:12px;
+
+    color:#fff;
+
+    font-size:19px;
+
+    opacity:.90;
+
+}
+
+/*==========================================
+VIDEO GRID
+==========================================*/
+
+.videoGrid{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:35px;
+
+    align-items:stretch;
+
+}
+
+/*==========================================
+VIDEO CARD
+==========================================*/
+
+.videoCard{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-width:0;
+
+    min-height:450px;
+
+    height:100%;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    cursor:pointer;
+
+    background:
+        rgba(20,20,20,.88);
+
+    border:
+        1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.38);
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease,
+        border-color .4s ease;
+
+}
+
+.videoCard:hover{
+
+    transform:translateY(-12px);
+
+    border-color:
+        rgba(255,215,0,.55);
+
+    box-shadow:
+        0 30px 70px rgba(255,215,0,.18);
+
+}
+
+/*==========================================
+VIDEO PREVIEW
+==========================================*/
+
+.videoCard video{
+
+    display:block;
+
+    width:100%;
+
+    height:220px;
+
+    flex-shrink:0;
+
+    object-fit:cover;
+
+    filter:brightness(.82);
+
+    background:#000;
+
+}
+
+/*==========================================
+CARD CONTENT
+==========================================*/
+
+.videoInfo{
+
+    display:flex;
+
+    flex:1;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    min-height:180px;
+
+    padding:25px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(18,18,18,.90),
+            rgba(8,8,8,.98)
+        );
+
+}
+
+.videoInfo h2{
+
+    margin-bottom:12px;
+
+    color:#FFD700;
+
+    font-size:25px;
+
+    line-height:1.3;
+
+}
+
+.videoInfo p{
+
+    color:#fff;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    opacity:.85;
+
+}
+
+/*==========================================
+PLAY BUTTON
+==========================================*/
+
+.playButton{
+
+    position:absolute;
+
+    top:110px;
+
+    left:50%;
+
+    z-index:5;
+
+    width:76px;
+
+    height:76px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:
+        rgba(255,215,0,.95);
+
+    color:#111;
+
+    font-size:30px;
+
+    box-shadow:
+        0 12px 35px rgba(0,0,0,.35),
+        0 0 25px rgba(255,215,0,.28);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.videoCard:hover .playButton{
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.15);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.40),
+        0 0 35px rgba(255,215,0,.45);
+
+}
+
+/*==========================================
+FINAL MEMORY LOCKED CARD
+==========================================*/
+
+.videoCard.lockedCard{
+
+    position:relative;
+
+    display:flex !important;
+
+    flex-direction:column;
+
+    visibility:visible !important;
+
+    opacity:1;
+
+    min-width:0;
+
+    min-height:450px;
+
+    height:100%;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    border:
+        2px solid rgba(255,215,0,.52);
+
+    cursor:pointer;
+
+    background:
+        rgba(20,20,20,.90);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.40),
+        0 0 25px rgba(255,215,0,.10);
+
+    z-index:10;
+
+}
+
+.lockedPreview{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    height:220px;
+
+    flex-shrink:0;
+
+    color:#FFD700;
+
+    font-size:78px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,215,0,.20),
+            rgba(15,15,15,.95) 70%
+        );
+
+    text-shadow:
+        0 0 25px rgba(255,215,0,.55);
+
+}
+
+.lockedCard .videoInfo{
+
+    display:flex;
+
+    flex:1;
+
+    min-height:180px;
+
+}
+
+.lockedCard .videoInfo h2{
+
+    color:#FFD700;
+
+}
+
+.lockedCard .videoInfo p{
+
+    color:#fff;
+
+    opacity:.85;
+
+}
+
+.lockedCard:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#FFD700;
+
+    box-shadow:
+        0 30px 70px rgba(255,215,0,.28),
+        0 0 35px rgba(255,215,0,.14);
+
+}
+
+/*==========================================
+VIDEO MODAL
+==========================================*/
+
+.videoModal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:99999;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+    background:
+        rgba(0,0,0,.94);
+
+    transition:
+        opacity .35s ease,
+        visibility .35s ease;
+
+}
+
+.videoModal.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+    pointer-events:auto;
+
+}
+
+/*==========================================
+VIDEO WRAPPER
+==========================================*/
+
+.videoWrapper{
+
+    position:relative;
+
+    width:90%;
+
+    max-width:1200px;
+
+    border-radius:22px;
+
+    background:#000;
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.70),
+        0 0 40px rgba(255,215,0,.12);
+
+}
+
+.videoWrapper video{
+
+    display:block;
+
+    width:100%;
+
+    max-height:82vh;
+
+    border-radius:20px;
+
+    background:#000;
+
+}
+
+/*==========================================
+CLOSE BUTTON
+==========================================*/
+
+#closeVideo{
+
+    position:absolute;
+
+    top:-18px;
+
+    right:-18px;
+
+    z-index:20;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:#FFD700;
+
+    color:#111;
+
+    font-size:23px;
+
+    font-weight:700;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.45);
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+
+}
+
+#closeVideo:hover{
+
+    transform:scale(1.10) rotate(90deg);
+
+    background:#fff;
+
+}
+
+/*==========================================
+TABLET RESPONSIVE
+==========================================*/
+
+@media(max-width:1100px){
+
+    .memoriesScene{
+
+        overflow-y:auto;
+
+        align-items:flex-start;
+
+        padding:
+            40px 0 70px;
+
+    }
+
+    .memoriesContainer{
+
+        width:92%;
+
+    }
+
+    .sectionTitle{
+
+        margin-bottom:35px;
+
+    }
+
+    .sectionTitle h1{
+
+        font-size:42px;
+
+    }
+
+    .videoGrid{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+    }
+
+    .videoCard,
+    .videoCard.lockedCard{
+
+        min-height:auto;
+
+    }
+
+    .videoCard video,
+    .lockedPreview{
+
+        height:320px;
+
+    }
+
+    .playButton{
+
+        top:160px;
+
+    }
+
+}
+
+/*==========================================
+MOBILE RESPONSIVE
+==========================================*/
+
+@media(max-width:768px){
+
+    .memoriesScene{
+
+        padding:
+            30px 0 60px;
+
+    }
+
+    .memoriesContainer{
+
+        width:94%;
+
+    }
+
+    .sectionTitle h1{
+
+        font-size:32px;
+
+        letter-spacing:1.5px;
+
+    }
+
+    .sectionTitle p{
+
+        font-size:16px;
+
+    }
+
+    .videoGrid{
+
+        gap:24px;
+
+    }
+
+    .videoCard,
+    .videoCard.lockedCard{
+
+        border-radius:20px;
+
+    }
+
+    .videoCard video,
+    .lockedPreview{
+
+        height:220px;
+
+    }
+
+    .lockedPreview{
+
+        font-size:62px;
+
+    }
+
+    .videoInfo{
+
+        min-height:auto;
+
+        padding:22px;
+
+    }
+
+    .videoInfo h2{
+
+        font-size:22px;
+
+    }
+
+    .videoInfo p{
+
+        font-size:15px;
+
+    }
+
+    .playButton{
+
+        top:110px;
+
+        width:64px;
+
+        height:64px;
+
+        font-size:25px;
+
+    }
+
+    .videoModal{
+
+        padding:18px;
+
+    }
+
+    .videoWrapper{
+
+        width:100%;
+
+    }
+
+    #closeVideo{
+
+        top:-12px;
+
+        right:-8px;
+
+        width:44px;
+
+        height:44px;
+
+        font-size:20px;
+
+    }
+
+}
+
+/*==========================================
+SHORT SCREEN RESPONSIVE
+==========================================*/
+
+@media(max-height:760px) and (min-width:1101px){
+
+    .memoriesContainer{
+
+        transform:scale(.86);
+
+    }
+
+}
+.videoControls{
+
+    position:absolute;
+
+    top:-65px;
+
+    left:0;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    z-index:100;
+
+}
+
+.videoControls button{
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    background:linear-gradient(135deg,#FFD700,#FFC107);
+
+    color:#111;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+    transition:.3s;
+
+}
+
+.videoControls button:hover{
+
+    transform:translateY(-3px);
+
+}
+.videoTopBar button:disabled{
+
+    transform:none !important;
+
+    box-shadow:none;
+
+}
