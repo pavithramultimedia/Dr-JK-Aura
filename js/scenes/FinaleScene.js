@@ -280,14 +280,14 @@ CINEMATIC END
 /* Start fading the background music */
 tl.call(()=>{
 
-    AudioManager.fadeOut(5);
+    AudioManager.fadeOut(25);
 
 });
 
 /* Wait while the music fades */
 tl.to({},{
 
-    duration:5
+    duration:8
 
 });
 
