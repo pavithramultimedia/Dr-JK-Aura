@@ -78,14 +78,6 @@ class FinaleScene{
 
         </div>
 
-        <div class="creator">
-
-            Crafted with ❤️ by
-
-            <strong>Pavithra & Nachu</strong>
-
-        </div>
-
     </div>
 
 </section>
@@ -335,13 +327,7 @@ tl.to(".finaleScene",{
 
                 <p class="finalCreatorText">
 
-                    Crafted with admiration ❤️ by
-
-                    <strong>
-
-                        PAVITHRA & NACHU
-
-                    </strong>
+                   Crafted with admiration by ❤️
 
                 </p>
 
