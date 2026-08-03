@@ -5,6 +5,8 @@
 =========================================================*/
 
 class GalleryScene {
+        static isTransitioning = false;
+
 
     /*==========================================
     LEADERSHIP DATA
@@ -135,7 +137,11 @@ class GalleryScene {
 
         <div class="photoFrame">
 
-            <img id="qualityImage">
+            <img
+    id="qualityImage"
+    decoding="async"
+    alt=""
+>
 
         </div>
 
@@ -208,6 +214,26 @@ static loadQuality(){
         ease:"power3.out"
     });
 
+    this.preloadNextImage();
+
+}
+
+/*==========================================
+PRELOAD NEXT IMAGE
+==========================================*/
+
+static preloadNextImage(){
+
+    const nextIndex = this.currentIndex + 1;
+
+    if(nextIndex < this.qualities.length){
+
+        const nextImage = new Image();
+
+        nextImage.src = this.qualities[nextIndex].image;
+
+    }
+
 }
 
 /*==========================================
@@ -219,6 +245,12 @@ static events(){
     document
     .getElementById("nextQuality")
     .onclick = () => {
+
+        if(this.isTransitioning){
+            return;
+        }
+
+        this.isTransitioning = true;
 
         if(this.currentIndex < this.qualities.length - 1){
 
@@ -236,6 +268,8 @@ static events(){
 
                     this.loadQuality();
 
+                    this.isTransitioning = false;
+
                 }
 
             });
@@ -250,7 +284,9 @@ static events(){
 
                 ease:"power2.inOut",
 
-                onComplete(){
+                onComplete:()=>{
+
+                    this.isTransitioning = false;
 
                     GalleryScene.showCompletion();
 

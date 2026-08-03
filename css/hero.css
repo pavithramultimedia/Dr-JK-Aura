@@ -105,7 +105,8 @@ CENTER GLASS CARD
 
     max-width:92%;
 
-    min-height:820px;
+    min-height:auto;
+    max-height:92vh;
 
     border-radius:35px;
 
@@ -190,13 +191,15 @@ CEO PORTRAIT
 
     position:absolute;
 
-    top:-150px;
+    top:-25px;
 
     left:50%;
 
     transform:translateX(-50%);
 
     z-index:100;
+
+    animation:none;
 
 }
 
@@ -218,10 +221,11 @@ CEO PORTRAIT
 }
 
 .photoWrapper{
+    animation:photoFloat 5s ease-in-out infinite;
 
-    width:290px;
+    width:250px;
 
-    height:380px;
+    height:330px;
 
     border-radius:20px;
 
@@ -264,7 +268,7 @@ TEXT
 
     width:100%;
 
-    margin-top:180px;
+    margin-top:285px;
 
     display:flex;
 
@@ -300,11 +304,22 @@ TEXT
 
     color:#fff;
 
-    font-size:54px;
+    font-size:50px;
 
     font-weight:800;
 
-    margin-bottom:10px;
+    line-height:1.15;
+
+    margin:0 0 10px;
+
+    letter-spacing:1px;
+
+}
+.heroContent h1:nth-of-type(2){
+
+    margin-top:4px;
+
+    margin-bottom:8px;
 
 }
 
@@ -312,9 +327,13 @@ TEXT
 
     color:#FFD700;
 
-    font-size:28px;
+    font-size:26px;
 
-    margin-bottom:10px;
+    line-height:1.3;
+
+    margin-top:8px;
+
+    margin-bottom:18px;
 
 }
 
@@ -332,33 +351,38 @@ TEXT
 
 .divider{
 
-width:180px;
+    width:180px;
 
-height:3px;
+    height:2px;
 
-margin:25px auto;
+    margin:14px auto 16px;
 
-background:linear-gradient(
-90deg,
-transparent,
-gold,
-transparent);
+    background:linear-gradient(
+        90deg,
+        transparent,
+        gold,
+        transparent
+    );
 
 }
 
 .heroQuote{
 
-    color:rgb(244, 240, 240);
+    color:rgb(244,240,240);
 
-    font-size:20px;
+    font-size:18px;
 
-    line-height:1.8;
+    font-weight:400;
 
-    min-height:90px;
+    line-height:1.65;
 
     max-width:560px;
 
-    margin:20px auto;
+    margin:16px auto 14px;
+
+    text-align:center;
+
+    letter-spacing:.3px;
 
 }
 
@@ -594,7 +618,7 @@ CEO PHOTO
 
 .photoWrapper{
 
-    animation:photoFloat 5s ease-in-out infinite;
+    animation:none;
 
 }
 
@@ -800,23 +824,17 @@ transform:translateX(-60px);
 
 @keyframes photoFloat{
 
-0%{
+    0%{
+        translate:0 0;
+    }
 
-transform:translateY(0px);
+    50%{
+        translate:0 -10px;
+    }
 
-}
-
-50%{
-
-transform:translateY(-12px);
-
-}
-
-100%{
-
-transform:translateY(0px);
-
-}
+    100%{
+        translate:0 0;
+    }
 
 }
 
