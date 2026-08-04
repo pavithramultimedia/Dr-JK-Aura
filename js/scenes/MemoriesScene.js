@@ -336,29 +336,39 @@ static events(){
     VIDEO FINISHED
     ==================================*/
 
-    player.onended = ()=>{
+player.onended = async () => {
 
-        /*
-        Video 1 automatically loads Video 2.
-        Video 2 remains open so the user can
-        click Next to enter the Unlock Scene.
-        */
+    // Play second video automatically
+    if (currentVideoIndex < videos.length - 1) {
 
-        if(currentVideoIndex < videos.length - 1){
+        playVideo(currentVideoIndex + 1);
+        return;
 
-            playVideo(currentVideoIndex + 1);
+    }
 
-        }else{
+    // Last video finished
 
-            this.updateVideoButtons(
-                currentVideoIndex,
-                videos.length
-            );
+    try {
 
+        if (document.fullscreenElement) {
+            await document.exitFullscreen();
         }
 
-    };
+    } catch (e) {}
 
+    player.pause();
+    player.currentTime = 0;
+    player.removeAttribute("src");
+    player.load();
+
+    modal.classList.remove("show");
+
+    AudioManager.fadeIn(1.5);
+
+    // Automatically continue
+    UnlockScene.start();
+
+};
     /*==================================
     CLOSE VIDEO
     ==================================*/
