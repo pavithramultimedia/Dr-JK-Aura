@@ -5,7 +5,7 @@
 
 class BalloonEngine{
 
-    static start(count = 20){
+    static start(count = 12){
 
         for(let i = 0; i < count; i++){
 

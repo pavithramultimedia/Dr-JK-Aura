@@ -4,6 +4,27 @@
 =========================================================*/
 
 class GiftScene{
+    static preloadAssets(){
+
+    const images = [
+
+        "assets/images/gift/gift-box.png",
+        "assets/images/gift/gift-open.png",
+        "assets/images/gift/real-gift.png",
+        "assets/images/gift/left-gift.png",
+        "assets/images/gift/right-gift.png"
+
+    ];
+
+    images.forEach(src => {
+
+        const img = new Image();
+
+        img.src = src;
+
+    });
+
+}
 
     static start(){
 
@@ -113,121 +134,102 @@ class GiftScene{
     ANIMATION
     ==================================*/
 
-    static animate(){
+static animate(){
 
-        const tl=gsap.timeline();
+    const tl = gsap.timeline();
 
-        tl.from(".giftScene",{
+    tl.from(".giftScene",{
 
-            opacity:0,
+        opacity:0,
+        duration:.4
 
-            duration:.8
+    });
 
-        });
+    tl.from(".giftGlow",{
 
-        tl.from(".giftGlow",{
+        scale:.7,
+        opacity:0,
+        duration:.6
 
-            scale:0,
+    },"<");
 
-            opacity:0,
+    tl.from(".giftCard",{
 
-            duration:1.2
+        y:40,
+        opacity:0,
+        duration:.6,
+        ease:"power3.out"
 
-        },"<");
+    },"-=0.2");
 
-        tl.from(".giftCard",{
+    tl.from(".giftTitle",{
 
-            y:80,
+        y:-20,
+        opacity:0,
+        duration:.4
 
-            opacity:0,
+    },"-=0.35");
 
-            duration:1,
+    tl.from(".giftSubtitle",{
 
-            ease:"back.out(1.7)"
+        opacity:0,
+        duration:.35
 
-        });
+    },"-=0.25");
 
-        tl.from(".giftTitle",{
+    tl.from("#giftBox",{
 
-            y:-40,
+        y:-60,
+        scale:.8,
+        opacity:0,
+        duration:.7,
+        ease:"back.out(1.4)"
 
-            opacity:0,
+    },"-=0.25");
 
-            duration:.8
+    tl.from(".giftQuote",{
 
-        });
+        opacity:0,
+        duration:.35
 
-        tl.from(".giftSubtitle",{
+    },"-=0.3");
 
-            opacity:0,
+tl.fromTo("#openGiftBtn",
 
-            duration:.8
+{
+    y:15,
+    opacity:0
+},
 
-        });
+{
+    y:0,
+    opacity:1,
+    duration:.4,
+    clearProps:"opacity,transform"
+},
 
-        tl.from("#giftBox",{
+"-=0.25");
 
-            y:-150,
+    gsap.to("#giftBox",{
 
-            scale:.6,
+        y:-12,
+        duration:2.8,
+        repeat:-1,
+        yoyo:true,
+        ease:"sine.inOut"
 
-            opacity:0,
+    });
 
-            duration:1.2,
+    gsap.to("#openGiftBtn",{
 
-            ease:"bounce.out"
+        boxShadow:"0 0 35px rgba(255,215,0,.8)",
+        duration:1,
+        repeat:-1,
+        yoyo:true
 
-        });
+    });
 
-        tl.from(".giftQuote",{
-
-            opacity:0,
-
-            duration:.7
-
-        });
-
-        tl.from("#openGiftBtn",{
-
-            y:30,
-
-            opacity:0,
-
-            duration:.7
-
-        });
-
-        /* Floating Gift */
-
-        gsap.to("#giftBox",{
-
-            y:-12,
-
-            duration:2.8,
-
-            repeat:-1,
-
-            yoyo:true,
-
-            ease:"sine.inOut"
-
-        });
-
-        /* Button Glow */
-
-        gsap.to("#openGiftBtn",{
-
-            boxShadow:"0 0 35px rgba(255,215,0,.8)",
-
-            duration:1,
-
-            repeat:-1,
-
-            yoyo:true
-
-        });
-
-    }
+}
 
     /*==================================
 OPEN GIFT
@@ -242,6 +244,7 @@ static openGift(){
     const rightGift=document.getElementById("rightGift");
 
     button.disabled=true;
+    gsap.killTweensOf(gift);    
 
     const tl=gsap.timeline();
 
@@ -446,50 +449,54 @@ tl.fromTo(rightGift,
 /*==================================
 FLOATING ANIMATION
 ==================================*/
+
 tl.call(()=>{
 
     gsap.to(realGift,{
+
         y:"-=12",
         duration:2,
         repeat:-1,
         yoyo:true,
         ease:"sine.inOut"
+
     });
 
 });
 
 tl.to({},{
+
     duration:0.8
+
 });
 
 tl.call(()=>{
 
+    const giftBox =
+        document.getElementById("giftBox");
+
+    const giftQuote =
+        document.querySelector(".giftQuote");
+
+    if(giftBox){
+        giftBox.style.display = "none";
+    }
+
+    if(giftQuote){
+        giftQuote.style.display = "none";
+    }
+
     this.showGiftMessage();
 
-    gsap.to("#openGiftBtn", {
-        opacity: 0,
-        duration: 0.5,
-        onComplete: () => {
-            document.getElementById("openGiftBtn").style.display = "none";
-        }
-    });
-    tl.call(() => {
-    document.getElementById("giftBox").style.display = "none";
-    document.querySelector(".giftQuote").style.display = "none";
-    document.getElementById("openGiftBtn").style.display = "none";
 });
 
+/* Sparkles */
+
+tl.call(()=>{
+
+    this.createSparkles();
+
 });
-
-
-    /* Sparkles */
-
-    tl.call(()=>{
-
-        this.createSparkles();
-
-    });
-
 }
 /*==================================
 GOLDEN FLASH

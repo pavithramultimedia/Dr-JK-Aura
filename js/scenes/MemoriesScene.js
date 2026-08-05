@@ -94,7 +94,7 @@
             controls
             autoplay
             playsinline
-            preload="auto"
+            preload="metadata"
             controlsList="nodownload">
 
         </video>
@@ -122,7 +122,7 @@
         <video
     muted
     playsinline
-    preload="metadata">
+    preload="none">
 
             <source src="${video}" type="video/mp4">
 
@@ -200,12 +200,17 @@ static events(){
         }
 
         currentVideoIndex = index;
+        document
+        .querySelectorAll(".videoCard video")
+        .forEach(previewVideo => {
+
+            previewVideo.pause();
+
+        });        
 
         player.pause();
 
         player.removeAttribute("src");
-
-        player.load();
 
         player.src = videos[currentVideoIndex];
 
@@ -228,7 +233,7 @@ static events(){
 
             });
 
-        },100);
+        },250);
 
         this.updateVideoButtons(
             currentVideoIndex,
@@ -246,31 +251,11 @@ static events(){
         const preview =
             card.querySelector("video");
 
-        if(preview){
+if(preview){
 
-            preview.load();
+    preview.pause();
 
-            card.addEventListener(
-                "mouseenter",
-                ()=>{
-
-                    preview.play().catch(()=>{});
-
-                }
-            );
-
-            card.addEventListener(
-                "mouseleave",
-                ()=>{
-
-                    preview.pause();
-
-                    preview.currentTime = 0;
-
-                }
-            );
-
-        }
+}
 
         card.addEventListener("click",()=>{
 

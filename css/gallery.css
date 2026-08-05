@@ -407,3 +407,81 @@ transform:translateY(0);
 }
 
 }
+/*==========================================
+PREMIUM GOLD PARTICLES
+==========================================*/
+
+#galleryParticles{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+.galleryParticle{
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(circle,
+    rgba(255,245,210,1) 0%,
+    rgba(255,215,0,.7) 40%,
+    rgba(255,180,0,.2) 70%,
+    transparent 100%);
+
+    filter:blur(.3px);
+
+    box-shadow:
+    0 0 8px rgba(255,215,0,.6);
+
+    animation:
+    galleryFloat linear infinite;
+
+}
+
+@keyframes galleryFloat{
+
+    0%{
+
+        transform:
+        translateY(40px);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:.8;
+
+    }
+
+    80%{
+
+        opacity:.4;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(-120px);
+
+        opacity:0;
+
+    }
+
+}

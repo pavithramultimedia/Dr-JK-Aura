@@ -9,6 +9,7 @@ class CakeScene{
 
         sceneManager.show("Cake Ceremony");
         AudioManager.play("cake");
+        GiftScene.preloadAssets();
 
         const app=document.getElementById("app");
 
@@ -291,11 +292,11 @@ static events(){
 
     document
     .getElementById("cutCakeBtn")
-    .addEventListener("click",()=>{
+    .onclick = ()=>{
 
         this.cutCake();
 
-    });
+    };
 
 }
 /*==========================================
@@ -529,15 +530,21 @@ static cutCake(){
 
         onComplete:()=>{
 
-            button.disabled=false;
+        button.disabled = false;
 
-            button.innerHTML="🎁 OPEN YOUR GIFT";
+        button.innerHTML = "🎁 OPEN YOUR GIFT";
 
-            button.onclick=()=>{
+        /* Remove the old cake click */
+        button.onclick = null;
 
-                GiftScene.start();
+        /* Add the new gift click */
+        button.onclick = () => {
 
-            };
+            console.log("Opening Gift Scene...");
+
+            GiftScene.start();
+
+        };
 
         }
 

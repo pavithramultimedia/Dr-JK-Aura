@@ -91,7 +91,7 @@ class FireworkEngine {
 
         FireworkEngine.flash(x, y);
 
-        const totalParticles = 180;
+        const totalParticles = 90;
 
         for (let i = 0; i < totalParticles; i++) {
 

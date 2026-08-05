@@ -92,7 +92,7 @@ AudioManager.play("hero");
 
         container.innerHTML = "";
 
-        for (let i = 0; i < 150; i++) {
+        for (let i = 0; i < 80; i++) {
 
             const particle = document.createElement("span");
 

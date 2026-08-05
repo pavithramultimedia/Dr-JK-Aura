@@ -122,6 +122,7 @@ class GalleryScene {
         app.innerHTML = `
 
 <section class="galleryScene">
+<div id="galleryParticles"></div>
 
     <div class="galleryOverlay"></div>
 
@@ -160,11 +161,54 @@ class GalleryScene {
 `;
 
         this.loadQuality();
-
+        this.createParticles();
         this.events();
 
     }
 
+    /*==========================================
+PREMIUM GOLD PARTICLES
+==========================================*/
+
+static createParticles(){
+
+    const container =
+        document.getElementById("galleryParticles");
+
+    if(!container) return;
+
+    container.innerHTML = "";
+
+    for(let i = 0; i < 70; i++){
+
+        const particle =
+            document.createElement("span");
+
+        particle.className = "galleryParticle";
+
+        particle.style.left =
+            Math.random() * 100 + "%";
+
+        particle.style.top =
+            Math.random() * 100 + "%";
+
+        particle.style.animationDuration =
+            (8 + Math.random() * 8) + "s";
+
+        particle.style.animationDelay =
+            Math.random() * 5 + "s";
+
+        particle.style.opacity =
+            .15 + Math.random() * .55;
+
+        particle.style.transform =
+            `scale(${0.3 + Math.random()})`;
+
+        container.appendChild(particle);
+
+    }
+
+}
 /*==========================================
 LOAD QUALITY
 ==========================================*/
@@ -192,7 +236,7 @@ static loadQuality(){
 
     if(this.currentIndex === this.qualities.length - 1){
 
-        btn.innerHTML = "🎂 Continue to Cake Ceremony";
+        btn.innerHTML ="🎬 Continue to Memory Theater";
 
     }else{
 

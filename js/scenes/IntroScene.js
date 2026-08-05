@@ -49,7 +49,7 @@ class IntroScene {
 
 `;
 
-        new ParticleEngine();
+        IntroScene.particleEngine = new ParticleEngine(180);
 
         document
             .getElementById("introStage")
@@ -141,11 +141,19 @@ class IntroScene {
             duration: 2,
             delay: 2,
 
-            onComplete() {
+onComplete() {
 
-                PasswordScene.start();
+    if(IntroScene.particleEngine){
 
-            }
+        IntroScene.particleEngine.destroy();
+
+        IntroScene.particleEngine = null;
+
+    }
+
+    PasswordScene.start();
+
+}
 
         });
 
