@@ -143,14 +143,6 @@ class IntroScene {
 
 onComplete() {
 
-    if(IntroScene.particleEngine){
-
-        IntroScene.particleEngine.destroy();
-
-        IntroScene.particleEngine = null;
-
-    }
-
     PasswordScene.start();
 
 }

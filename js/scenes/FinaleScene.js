@@ -327,7 +327,7 @@ tl.to(".finaleScene",{
 
                 <p class="finalCreatorText">
 
-                   Crafted with admiration by ❤️
+                   Design & Developed by pavithra ❤️
 
                 </p>
 

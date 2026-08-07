@@ -62,7 +62,8 @@ Happy Birthday!
 
 With love and gratitude,
 
-Sri Krish International School Family`;
+Sri Krish International School Family
+Crafted with admiration by Pavithra & Nachu`;
 
         const target=document.getElementById("typeMessage");
 

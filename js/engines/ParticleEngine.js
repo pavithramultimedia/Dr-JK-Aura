@@ -1,23 +1,37 @@
-/*=========================================
-    PROJECT AURORA
-    PARTICLE ENGINE
-=========================================*/
+/*=========================================*
+* PROJECT AURORA 2.0
+* GLOBAL PARTICLE ENGINE
+*=========================================*/
 
-class ParticleEngine{
+class ParticleEngine {
 
-    constructor(count = 70){
+    constructor(count = 100) {
 
-        this.canvas = document.createElement("canvas");
+        // Prevent duplicate canvases
+        const oldCanvas =
+            document.getElementById("particleCanvas");
 
-        this.canvas.id = "particleCanvas";
+        if (oldCanvas) {
+            oldCanvas.remove();
+        }
 
-        document.body.appendChild(this.canvas);
+        this.canvas =
+            document.createElement("canvas");
 
-        this.ctx = this.canvas.getContext("2d");
+        this.canvas.id =
+            "particleCanvas";
+
+        document.body.appendChild(
+            this.canvas
+        );
+
+        this.ctx =
+            this.canvas.getContext("2d");
 
         this.animationId = null;
 
-        this.resizeHandler = () => this.resize();
+        this.resizeHandler =
+            () => this.resize();
 
         this.resize();
 
@@ -31,42 +45,48 @@ class ParticleEngine{
         );
 
         this.animate();
-
     }
 
-    resize(){
+    resize() {
 
-        this.canvas.width = window.innerWidth;
+        this.canvas.width =
+            window.innerWidth;
 
-        this.canvas.height = window.innerHeight;
-
+        this.canvas.height =
+            window.innerHeight;
     }
 
-    createParticles(count){
+    createParticles(count) {
 
         this.particles = [];
 
-        for(let i = 0; i < count; i++){
+        for (let i = 0; i < count; i++) {
 
             this.particles.push({
 
-                x:Math.random() * this.canvas.width,
+                x:
+                    Math.random() *
+                    this.canvas.width,
 
-                y:Math.random() * this.canvas.height,
+                y:
+                    Math.random() *
+                    this.canvas.height,
 
-                r:Math.random() * 2 + 1,
+                r:
+                    Math.random() * 2 + 1,
 
-                speed:Math.random() * 0.6 + 0.2,
+                speed:
+                    Math.random() * 0.6 + 0.2,
 
-                alpha:Math.random()
+                alpha:
+                    0.2 +
+                    Math.random() * 0.7
 
             });
-
         }
-
     }
 
-    animate(){
+    animate() {
 
         this.ctx.clearRect(
             0,
@@ -75,16 +95,18 @@ class ParticleEngine{
             this.canvas.height
         );
 
-        this.particles.forEach(p=>{
+        this.particles.forEach(p => {
 
             p.y -= p.speed;
 
-            if(p.y < 0){
+            if (p.y < 0) {
 
-                p.y = this.canvas.height;
+                p.y =
+                    this.canvas.height;
 
-                p.x = Math.random() * this.canvas.width;
-
+                p.x =
+                    Math.random() *
+                    this.canvas.width;
             }
 
             this.ctx.beginPath();
@@ -101,23 +123,23 @@ class ParticleEngine{
                 `rgba(255,215,0,${p.alpha})`;
 
             this.ctx.fill();
-
         });
 
-        this.animationId = requestAnimationFrame(
-            () => this.animate()
-        );
-
+        this.animationId =
+            requestAnimationFrame(
+                () => this.animate()
+            );
     }
 
-    destroy(){
+    destroy() {
 
-        if(this.animationId){
+        if (this.animationId) {
 
-            cancelAnimationFrame(this.animationId);
+            cancelAnimationFrame(
+                this.animationId
+            );
 
             this.animationId = null;
-
         }
 
         window.removeEventListener(
@@ -125,14 +147,10 @@ class ParticleEngine{
             this.resizeHandler
         );
 
-        if(this.canvas){
-
+        if (this.canvas) {
             this.canvas.remove();
-
         }
 
         this.particles = [];
-
     }
-
 }
