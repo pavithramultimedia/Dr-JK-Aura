@@ -44,9 +44,9 @@ class ThankYouScene{
 
     }
 
-    static typeMessage(){
+static typeMessage(){
 
-const text = `Dear Dr.K.Jayakarthik, CEO
+    const text = `Dear Dr.K.Jayakarthik, CEO
 
 Your vision has built more than a school—it has built confidence, character, and countless dreams.
 
@@ -63,8 +63,8 @@ Happy Birthday!
 With love and gratitude,
 
 Sri Krish International School Family
-Crafted with admiration by Pavithra & Nachu`;
 
+Crafted with admiration by Pavithra & Nachu`;
         const target=document.getElementById("typeMessage");
 
         const button=document.getElementById("celebrateBtn");
