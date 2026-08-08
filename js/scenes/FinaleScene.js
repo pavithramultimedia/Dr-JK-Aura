@@ -327,7 +327,7 @@ tl.to(".finaleScene",{
 
                 <p class="finalCreatorText">
 
-                   Design & Developed by pavithra ❤️
+                   ✨ Designed & Developed with ❤️ by Pavithra & Nachu ✨
 
                 </p>
 
